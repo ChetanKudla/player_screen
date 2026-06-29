@@ -38,24 +38,14 @@ class _PlayerScreenState extends State<PlayerScreen> {
 
                   const SizedBox(height: 24),
 
-                  SizedBox(width: double.infinity, child: TrackInfoText()),
+                  SizedBox(width: double.infinity, child: TrackInfoText(
+
+                    title: "HipHop",
+                    subtitle: "XXXTentacion",
+
+                  )),
 
                   const SizedBox(height: 16),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                   MySlider(
                     currentProgress: _duelCommandment.toDouble(),
                     onProgressChanged: (double newValue) {
@@ -64,28 +54,6 @@ class _PlayerScreenState extends State<PlayerScreen> {
                       });
                     },
                   ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 22.0),
                     child: AudioProgressBar(),
@@ -157,25 +125,32 @@ class _PlayerScreenState extends State<PlayerScreen> {
 }
 
 class TrackInfoText extends StatelessWidget {
-  const TrackInfoText({super.key});
+
+  final String title;
+  final String subtitle;
+
+  const TrackInfoText({super.key,
+    required this.title,
+    required this.subtitle
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
+      children: [
         Text(
-          "Deep Focus",
-          style: TextStyle(
+          title,
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 36,
             color: Colors.white,
           ),
         ),
-        SizedBox(height: 4),
+        const SizedBox(height: 4),
         Text(
-          "15 Minutes",
-          style: TextStyle(
+          subtitle,
+          style: const TextStyle(
             color: Colors.white54,
             fontSize: 15,
             fontWeight: FontWeight.bold,
