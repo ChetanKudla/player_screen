@@ -38,12 +38,25 @@ class _PlayerScreenState extends State<PlayerScreen> {
 
                   const SizedBox(height: 24),
 
-                  SizedBox(width: double.infinity, child: TrackInfoText(
+
+
+
+
+                  SizedBox(
+                      width: double.infinity,
+
+
+                      child: TrackInfoText(
 
                     title: "HipHop",
                     subtitle: "XXXTentacion",
 
                   )),
+
+
+
+
+
 
                   const SizedBox(height: 16),
                   MySlider(

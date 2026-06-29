@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/player_screen.dart';
 import 'package:untitled1/third_screen.dart';
+import 'package:untitled1/playlist_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Colors.black),
 
-      home: const PlayerScreen(),
+      home:  PlaylistScreen(),
 
     );
   }
