@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/player_screen.dart';
-import 'package:untitled1/third_screen.dart';
-import 'package:untitled1/playlist_screen.dart';
+import 'package:untitled1/main_wrapper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +12,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(scaffoldBackgroundColor: Colors.black),
-
-      home:  PlaylistScreen(),
-
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.black,
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.black,
+        ),
+      ),
+      home: const MainWrapper(),
     );
   }
 }

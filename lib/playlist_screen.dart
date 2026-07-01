@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 class PlaylistScreen extends StatelessWidget {
   PlaylistScreen({super.key});
 
-  // This is the array (List) of data we will feed into the UI
   final List<Map<String, String>> upNextTracks = [
     {"title": "HipHop", "artist": "XXXTentacion", "duration": "03:45"},
     {"title": "Ocean Waves", "artist": "Nature Sounds", "duration": "10:00"},
     {"title": "Deep Sleep", "artist": "Mano Shanti", "duration": "45:00"},
     {"title": "Morning Focus", "artist": "Daily Zen", "duration": "05:00"},
     {"title": "Anxiety Release", "artist": "Mano Shanti", "duration": "20:00"},
-    // You could have 50 or 500 items here, ListView.builder handles it perfectly.
   ];
 
   @override
@@ -27,16 +25,13 @@ class PlaylistScreen extends StatelessWidget {
       ),
       body: Center(
         child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 450), // Keeping it web-responsive
+          constraints: const BoxConstraints(maxWidth: 450),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-
-            // This is the core engine for rendering dynamic lists
             child: ListView.builder(
               itemCount: upNextTracks.length,
               reverse: false,
               itemBuilder: (context, index) {
-
                 final track = upNextTracks[index];
                 return Container(
                   margin: const EdgeInsets.only(bottom: 12),

@@ -23,7 +23,6 @@ class _PlayerScreenState extends State<PlayerScreen> {
         child: ConstrainedBox(
           constraints: const BoxConstraints(
             maxWidth: 450,
-            // The maximum width a premium mobile UI should ever grow
           ),
           child: SafeArea(
             child: Padding(
@@ -35,29 +34,13 @@ class _PlayerScreenState extends State<PlayerScreen> {
                 children: [
                   const SizedBox(height: 16),
                   const PremiumArtWorkCard(),
-
                   const SizedBox(height: 24),
-
-
-
-
-
                   SizedBox(
                       width: double.infinity,
-
-
                       child: TrackInfoText(
-
                     title: "HipHop",
                     subtitle: "XXXTentacion",
-
                   )),
-
-
-
-
-
-
                   const SizedBox(height: 16),
                   MySlider(
                     currentProgress: _duelCommandment.toDouble(),
@@ -71,9 +54,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 22.0),
                     child: AudioProgressBar(),
                   ),
-
                   const SizedBox(height: 24),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -84,12 +65,9 @@ class _PlayerScreenState extends State<PlayerScreen> {
                           size: 36,
                         ),
                         onPressed: () {
-
                         },
                       ),
-
                       const SizedBox(width: 32),
-
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -102,14 +80,11 @@ class _PlayerScreenState extends State<PlayerScreen> {
                           child: Icon(
                             size: 35,
                             _isPlaying ? Icons.pause : Icons.play_arrow,
-                            // Swaps icon instantly!
                             color: Colors.black,
                           ),
                         ),
                       ),
-
                       const SizedBox(width: 32),
-
                       IconButton(
                         icon: const Icon(
                           Icons.skip_next,
@@ -125,7 +100,6 @@ class _PlayerScreenState extends State<PlayerScreen> {
                       ),
                     ],
                   ),
-
                   const SizedBox(height: 16),
                 ],
               ),
@@ -265,7 +239,6 @@ class MySlider extends StatelessWidget {
         thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6.0),
       ),
       child: Slider(
-        // <-- This is why we can't name the class Slider!
         value: currentProgress,
         min: 0.0,
         max: 500.0,
